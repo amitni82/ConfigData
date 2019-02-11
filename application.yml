@@ -1,21 +1,19 @@
 spring: 
   data: 
     mongodb: 
-      uri: ${MONGO_URI}
+      uri: mongodb://mongo:passmongo@mongo.com:30888/admin
   kafka: 
-    bootstrap-servers:  ${KAFKA_BROKER}
+    bootstrap-servers:  test:9411
     consumer: 
       group-id: message-group
-    topics: ${TOPIC_NAME}
+    topics: test_topic
   
   sleuth: 
     sampler: 
       probability: 1
-#zipkin: 
-#base-url: ${ZIPKIN_SERVER_URL}
 LIBERTY_SERVICE_URI:
-  uri: ${LIBERTY_SERVICE}
+  uri: http://liberty
 MESSAGING:
-  topicName: ${TOPIC_NAME}
+  topicName: test_topic
 SCHEDULER:
-  interval: ${SCHEDULER_INTERVAL}
+  interval: "0/30 0/1 * 1/1 * ? *"
