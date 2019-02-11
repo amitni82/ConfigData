@@ -1,0 +1,21 @@
+spring: 
+  data: 
+    mongodb: 
+      uri: ${MONGO_URI}
+  kafka: 
+    bootstrap-servers:  ${KAFKA_BROKER}
+    consumer: 
+      group-id: message-group
+    topics: ${TOPIC_NAME}
+  
+  sleuth: 
+    sampler: 
+      probability: 1
+#zipkin: 
+#base-url: ${ZIPKIN_SERVER_URL}
+LIBERTY_SERVICE_URI:
+  uri: ${LIBERTY_SERVICE}
+MESSAGING:
+  topicName: ${TOPIC_NAME}
+SCHEDULER:
+  interval: ${SCHEDULER_INTERVAL}
